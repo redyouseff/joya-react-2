@@ -125,7 +125,7 @@ const FeatureTitleDuplicate = () => {
                   <div className="flex flex-col items-center space-y-2">
                   <a
     href={`tel:${project.agent.phone}`}
-    className="flex items-center space-x-2 text-sm font-medium text-gray-500 hover:text-gray-400"
+    className="flex items-center space-x-2 text-sm font-medium text-gray-500 hover:text-gray-400 pr-11"
   >
     <FaPhoneAlt /> <span>CALL NOW</span>
   </a>
