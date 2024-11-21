@@ -5,6 +5,7 @@ import { Mail, Phone, Globe } from "lucide-react";
 import { Pagination, Autoplay } from "swiper/modules";
 import image1 from "../../images/sliders/image 1.png";
 import image2 from "../../images/sliders/image 2.png";
+import image3 from "../../images/sliders/new/slina.jpg"
 
 const teamMembers = [
   {
@@ -13,17 +14,12 @@ const teamMembers = [
     img: image1,
     languages: "English, Arabic",
   },
+  ,
   {
-    name: "Mohammad Rabie",
-    role: "Co-founder and Managing Director",
-    img: image1,
-    languages: "English, Arabic",
-  },
-  {
-    name: "Nabeel Hammudeh",
-    role: "Sales and Marketing Manager",
-    img: image2,
-    languages: "English, Arabic",
+    name: "Simona",
+    role: "Sales Manager",
+    img: image3,
+    languages: "English, Bulgarian",
   },
   {
     name: "Mohammad Rabie",
@@ -37,7 +33,12 @@ const teamMembers = [
     img: image2,
     languages: "English, Arabic",
   },
-  // Add more team members as needed
+  {
+    name: "Simona",
+    role: "Sales Manager",
+    img: image3,
+    languages: "English, Bulgarian",
+  },
 ];
 
 const TeamSlider = () => {
