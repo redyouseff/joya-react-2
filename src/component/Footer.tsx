@@ -80,7 +80,10 @@ const Footer = () => {
               className="rounded-lg mb-2"
             ></iframe>
             <p className="text-center text-sm text-[#f0ede6]/80">
-              Dubai, business bay, prime tower 1401
+              Dubai, business bay,prime
+            </p>
+            <p className="text-center text-sm text-[#f0ede6]/80">
+              tower 1401
             </p>
           </div>
         </div>
