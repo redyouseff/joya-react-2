@@ -49,9 +49,7 @@ const Footer = () => {
             <h4 className="text-xl font-semibold mb-6 text-[#a0b3b1]">
               Contact Us
             </h4>
-            <p className="text-lg text-[#f0ede6]/80 mb-2">
-              Dubai, business bay, prime tower 1401
-            </p>
+         
             <p className="text-lg text-[#f0ede6]/80 mb-2">Phone: +971 4 765 4321</p>
             <p className="text-lg text-[#f0ede6]/80 mb-6">Email: info@joyaproperties.com</p>
 
@@ -70,18 +68,21 @@ const Footer = () => {
           </div>
 
           {/* Map Section */}
-          <div>
-           
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.3935221257595!2d55.27218731499999!3d25.20484968387482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEyJzE3LjgiTiA1NcKwMTYnMjIuNiJF!5e0!3m2!1sen!2sae!4v1604414715792!5m2!1sen!2sae"
-              width="100%"
-              height="250"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              className="rounded-lg"
-            ></iframe>
-          </div>
+<div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.3935221257595!2d55.27218731499999!3d25.20484968387482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEyJzE3LjgiTiA1NcKwMTYnMjIuNiJF!5e0!3m2!1sen!2sae!4v1604414715792!5m2!1sen!2sae"
+    width="100%"
+    height="250"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    className="rounded-lg mb-4" // Added spacing below map
+  ></iframe>
+  <p className="text-lg text-[#f0ede6]/80">
+    Dubai, business bay, prime tower 1401
+  </p>
+</div>
+
         </div>
 
         {/* Divider Line & Copyright */}
