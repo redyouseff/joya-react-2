@@ -30,7 +30,7 @@ const Footer = () => {
             <h4 className="text-xl font-semibold mb-6 text-[#a0b3b1]">
               Quick Links
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               {links.map((link) => (
                 <li key={link.name}>
                   <a
