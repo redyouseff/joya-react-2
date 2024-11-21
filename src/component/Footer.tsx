@@ -67,23 +67,26 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Map Section */}
-<div>
+     {/* Map Section */}
+<div className="flex flex-col items-center justify-center mt-8">
   <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.3935221257595!2d55.27218731499999!3d25.20484968387482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEyJzE3LjgiTiA1NcKwMTYnMjIuNiJF!5e0!3m2!1sen!2sae!4v1604414715792!5m2!1sen!2sae"
-    width="100%"
+    width="300" // Adjusted width for smaller display
     height="250"
     style={{ border: 0 }}
     allowFullScreen=""
     loading="lazy"
-    className="rounded-lg mb-4" // Added spacing below map
+    className="rounded-lg mb-4"
   ></iframe>
-  <p className="text-lg text-[#f0ede6]/80">
-    Dubai, business bay, prime tower 1401
+  <p className="text-center text-lg text-[#f0ede6]/80">
+    Dubai, business bay, 
+  </p>
+  <p className="text-center text-lg text-[#f0ede6]/80">
+  prime tower 1401
   </p>
 </div>
+</div>
 
-        </div>
 
         {/* Divider Line & Copyright */}
         <div className="mt-16 pt-8 border-t border-[#111810] text-center">
