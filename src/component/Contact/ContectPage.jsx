@@ -13,7 +13,8 @@
       });
     }, []);
 
-    return (
+    return ( 
+
       <section className="w-full min-h-screen bg-[#111612] text-[#EFECE6]">
         <div className="container mx-auto px-6 lg:px-12">
           {/* <div className="overflow-x-hidden" data-aos="fade-up">
@@ -174,6 +175,19 @@
                       </span>
                       <span className="text text-[#9da5a4]">Send us a message</span>
                     </a>
+
+                      {/* Map Section */}
+  <div className="mt-6">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.3935221257595!2d55.27218731499999!3d25.20484968387482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEyJzE3LjgiTiA1NcKwMTYnMjIuNiJF!5e0!3m2!1sen!2sae!4v1604414715792!5m2!1sen!2sae"
+     width="100%" 
+      height="350" 
+      style={{ border: 0, marginTop: "10px" }}
+      allowFullScreen=""
+      loading="lazy"
+      className="rounded-lg"
+    ></iframe>
+  </div>
                   </div>
                 </motion.div>
               </div>
