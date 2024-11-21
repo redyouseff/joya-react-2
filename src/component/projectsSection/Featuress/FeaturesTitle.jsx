@@ -17,10 +17,10 @@ const FeatureTitleDuplicate = () => {
       "/off plane/2/WhatsApp Image 2024-11-05 at 02.56.29_36f40446.jpg",
     ],
     highlights: [
-      { icon: <FaBed />, text: "5 Beds" },
-      { icon: <FaBath />, text: "9 Baths" },
+      { icon: <FaBed />, text: "5 beds" },
+      { icon: <FaBath />, text: "9 baths" },
       { icon: <FaRulerCombined />, text: "26,000 Sq. ft." },
-      { icon: <FaCar />, text: "5 Cars" },
+      { icon: <FaCar />, text: "5 cars" },
     ],
     agent: {
       name: "Mohamed Nabil",
@@ -108,7 +108,7 @@ const FeatureTitleDuplicate = () => {
                     {project.highlights.map((highlight, index) => (
                       <div key={index} className="flex flex-col items-center space-y-3  space-x-4">
                         <div className="text-2xl text-gray-500">{highlight.icon}</div>
-                        <span className="text-lg font-semibold text-gray-500">{highlight.text}</span>
+                        <span className="text-lg  text-gray-500">{highlight.text}</span>
                       </div>
                     ))}
                   </div>
