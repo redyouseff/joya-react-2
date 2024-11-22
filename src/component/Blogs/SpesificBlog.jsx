@@ -17,7 +17,7 @@ export default function SpecificBlog() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/blog/${id}`);
+        const response = await axios.get(`https://joya-back.onrender.com/blog/${id}`);
         setBlog(response.data.data); 
       } catch (error) {
         console.error("Error fetching the blogs:", error);
@@ -26,7 +26,7 @@ export default function SpecificBlog() {
       }
 
       try {
-        const response = await axios.get(`http://localhost:8000/blog`);
+        const response = await axios.get(`https://joya-back.onrender.com/blog`);
         setallblogs(response.data.data); 
       } catch (error) {
         console.error("Error fetching the blogs:", error);

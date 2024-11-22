@@ -9,7 +9,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/blog");
+        const response = await axios.get("https://joya-back.onrender.com/blog");
         setBlogs(response.data.data); // Update blogs state with fetched data
       } catch (error) {
         console.error("Error fetching the blogs:", error);
