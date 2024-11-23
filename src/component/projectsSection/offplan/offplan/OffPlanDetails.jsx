@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaWhatsapp, FaBed, FaBath, FaRulerCombined, FaCar, FaCity, FaShip, FaPlane, FaGlobe } from "react-icons/fa";
 import MortgageCalculator from "../../../services/MortageCalculator";
@@ -10,9 +10,52 @@ import icon4 from "../../../../images/icons/Downtown.svg"
 import icon5 from "../../../../images/icons/new/Wallet.svg"
 import icon6 from "../../../../images/icons/new/Special offer.svg"
 import icon7 from "../../../../images/icons/new/Property Booking.svg"
+import VisualImage from "./VisualImage";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 
 const OffPlanDetails = () => {
+  const [offplan, setoffplan] = useState([]); // State to store blogs
+  const [loading, setLoading] = useState(true); // State to manage loading status
+  const [allofplan,setallofplan] =useState([])
+  const {id}=useParams();
+
+  // Fetch blogs from API
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get(`https://joya-back.onrender.com/offplan/${id}`);
+        setoffplan(response.data.data); // Update blogs state with fetched data
+      } catch (error) {
+        console.error("Error fetching the blogs:", error);
+      } finally {
+        setLoading(false); // Set loading to false
+      }
+    };
+
+    fetchBlogs();
+  }, []); 
+  console.log(offplan)
+
+
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get(`https://joya-back.onrender.com/offplan`);
+        setallofplan(response.data.data); // Update blogs state with fetched data
+      } catch (error) {
+        console.error("Error fetching the blogs:", error);
+      } finally {
+        setLoading(false); // Set loading to false
+      }
+    };
+
+    fetchBlogs();
+  }, []); 
+
+ 
   const project = {
     title: "Bugatti Residences",
     description: `Bugatti Residences by Binghatti is the world’s first project by the renowned French luxury car brand Bugatti. Binghatti Properties, one of Dubai’s leading developers, is the creator of the complex. Located in the thriving neighbourhood of Business Bay, the upcoming striking landmark will comprise 2 towers, each 52 storeys high (4B+G+1P+45+R).`,
@@ -24,21 +67,19 @@ const OffPlanDetails = () => {
     ],
     paymentPlan: {
       description: `flexible and attractive payment plan options for buyers and investors, looking to have an exclusive beachfront lifestyle. Grab this opportunity to have a lifestyle on the Palm, where the rest of the things are convenien`,
-      mapImage: "/features/map-image.jpg",
+     
     },
-    proximity: [
-      { icon: icon4, text: "35 Minutes to Expo City" },
-      { icon: icon2 , text: "30 Minutes to Marina Walk" },
-      { icon: icon3, text: "30 Minutes to Dubai International Airport" },
-      { icon:icon1, text: "35 Minutes to Downtown Dubai" }
-    ],
-    highlights: [
-      { icon: <FaBed />, text: "5 Beds" },
-      { icon: <FaBath />, text: "5 Baths" },
-      { icon: <FaRulerCombined />, text: "26,000 Sq. ft." },
-      { icon: <FaCar />, text: "5 Cars" },
-    ],
+   
+  
   };
+   
+   
+const proximity= [
+    { icon: icon4, text: "35 Minutes to Expo City" },
+    { icon: icon2 , text: "30 Minutes to Marina Walk" },
+    { icon: icon3, text: "30 Minutes to Dubai International Airport" },
+    { icon:icon1, text: "35 Minutes to Downtown Dubai" }
+  ]
 
   const similarProjects = [
     {
@@ -63,37 +104,140 @@ const OffPlanDetails = () => {
   
 
   return (
-    <div className="bg-[#111612] text-[#faf8f7]">
-  {/* Icons Section */}
-<div className="py-10 mt-10 mt-10">
-  <div className="container mx-auto px-2 flex justify-around text-center">
-    <div className="flex items-center space-x-4">
+    <>
+
+{/* Slider Page */}
+<div data-aos="fade-up">
+  <div className="relative w-full h-screen visual-image-wrap">
+    {/* Animated Background image for desktop */}
+    <motion.div
+      initial={{ opacity: 0, scale: 1.1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1.5, delay: 0.2 }}
+      className="hidden sm:block absolute inset-0 bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${offplan?.imgSrcs?.[0] || "/default-desktop-image.jpg"})`,
+      }}
+    ></motion.div>
+
+    {/* Animated Background image for mobile */}
+    <motion.div
+      initial={{ opacity: 0, scale: 1.1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1.5, delay: 0.2 }}
+      className="block sm:hidden absolute inset-0 bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${offplan?.imgSrcs?.[0] || "/default-mobile-image.jpg"})`,
+      }}
+    ></motion.div>
+
+    {/* Gradients on top and bottom */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2, delay: 0.5 }}
+      className="absolute inset-0 bg-gradient-to-t w-full h-1/2 from-transparent to-[#111612] z-10"
+    ></motion.div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2, delay: 0.5 }}
+      className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent to-[#111612] z-10"
+    ></motion.div>
+
+    {/* Scroll indicator */}
+    {/* <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5, delay: 1 }}
+      className="absolute bottom-[-9px] sm:bottom-6 left-1/2 transform -translate-x-1/2 z-20"
+    >
+      <div className="w-6 h-12 flex flex-col items-center">
+        <div className="w-[1px] h-8 bg-[#faf8f7] animate-bounce"></div>
+      </div>
+    </motion.div> */}
+
+    {/* Info section */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5, delay: 1.2 }}
+      className="absolute bottom-0 left-0 w-full px-4 sm:px-10 z-30 text-[#faf8f7]"
+    >
+      <h2 className="text-2xl sm:text-4xl font-light uppercase fade-left transition-opacity duration-500">
+        {offplan?.title || "Default Title"}
+      </h2>
+    </motion.div>
+
+    {/* Search tabs */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5, delay: 1.4 }}
+      className="absolute bottom-0 right-0 px-4 sm:px-10 z-30 text-[#faf8f7]"
+    >
+      {/* Hide these links on mobile view */}
+      <div className="hidden sm:flex space-x-4">
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          whileHover={{ scale: 1.05, textDecoration: "underline" }}
+          transition={{ duration: 0.3 }}
+          href="/Projects/Features"
+          className="hover:underline text-sm sm:text-base"
+        >
+          Feature
+        </motion.a>
+        <span>|</span> {/* Horizontal line */}
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          whileHover={{ scale: 1.05, textDecoration: "underline" }}
+          transition={{ duration: 0.3 }}
+          href="/Projects/Off-Plan"
+          className="hover:underline text-sm sm:text-base"
+        >
+          Off Plan
+        </motion.a>
+      </div>
+    </motion.div>
+  </div>
+</div>
+
+
+
+      
+     <div className="bg-[#111612] text-[#faf8f7]">
+ {/* Icons Section */}
+<div className="py-10 mt-10">
+  <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+    <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4">
       <img
         src={icon5}
         alt="Starting Price Icon"
-        className="w-12 h-12" // Icon size
+        className="w-12 h-12 mb-4 sm:mb-0" // Icon size and spacing for mobile
       />
       <div>
         <p className="text-lg font-semibold">AED 1,040,000</p>
         <span className="text-sm text-[#d3d3d3]">Starting Price</span>
       </div>
     </div>
-    <div className="flex items-center space-x-4">
+    <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4">
       <img
         src={icon6}
         alt="Special Conditions Icon"
-        className="w-12 h-12" // Icon size
+        className="w-12 h-12 mb-4 sm:mb-0" // Icon size and spacing for mobile
       />
       <div>
         <p className="text-lg font-semibold">Special Conditions</p>
         <span className="text-sm text-[#d3d3d3]">Apply Now</span>
       </div>
     </div>
-    <div className="flex items-center space-x-4">
+    <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4">
       <img
         src={icon7}
         alt="Buy Property Icon"
-        className="w-12 h-12" // Icon size
+        className="w-12 h-12 mb-4 sm:mb-0" // Icon size and spacing for mobile
       />
       <div>
         <p className="text-lg font-semibold">Buy Property</p>
@@ -102,6 +246,10 @@ const OffPlanDetails = () => {
     </div>
   </div>
 </div>
+
+
+
+
 
 
 
@@ -123,7 +271,7 @@ const OffPlanDetails = () => {
               className="w-full space-y-4"
             >
               <div className="grid grid-cols-2 gap-4">
-                {project.imgSrcs.slice(0, 2).map((src, index) => (
+                {offplan?.imgSrcs?.slice(0, 2).map((src, index) => (
                   <img
                     key={index}
                     src={src}
@@ -133,7 +281,7 @@ const OffPlanDetails = () => {
                 ))}
               </div>
               <img
-                src={project.imgSrcs[2]}
+                src={offplan?.imgSrcs?.[2]}
                 alt="Property Image 3"
                 className="w-full h-[300px] object-cover rounded-lg"
               />
@@ -148,15 +296,14 @@ const OffPlanDetails = () => {
               className="w-full space-y-6"
             >
               <h2 className="text-4xl font-bold mb-10 mt-10">About This Property</h2>
-              <p className="text-[#d3d3d3] leading-relaxed mb-10">{project.description}</p>
-              <p className="text-[#d3d3d3] leading-relaxed mt-10 pt-10">{project.details}</p>
+              <p className="text-[#d3d3d3] leading-relaxed mb-10">{offplan?.description}</p>
+              <p className="text-[#d3d3d3] leading-relaxed mt-10 pt-10">{offplan?.details}</p>
             </motion.div>
           </div>
         </div>
       </motion.div>
 
-      
-{/* Proximity Section */}
+
 <div className="py-12">
   <div className="container mx-auto px-4">
     <motion.div
@@ -175,7 +322,7 @@ const OffPlanDetails = () => {
       }}
       className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
     >
-      {project.proximity.map((item, index) => {
+      {proximity.map((item, index) => {
         const [time, ...place] = item.text.split(" to "); // Separate time from the place
         return (
           <motion.div
@@ -224,7 +371,7 @@ const OffPlanDetails = () => {
       >
       <h2 className="text-2xl font-extrabold mb-10">Payment Plan</h2>
 
-        <p>{project.paymentPlan.description}</p>
+        <p>{offplan?.paymentPlan?.description}</p>
       </motion.div>
 
       {/* Clickable Map */}
@@ -253,38 +400,42 @@ const OffPlanDetails = () => {
 </div>
 
 
-
 {/* Similar Projects Section */}
 <div className="bg-[#111612] text-[#faf8f7] py-16">
   <div className="container mx-auto px-4 lg:px-16">
     <h2 className="text-3xl font-bold mb-8">Similar Projects</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {similarProjects.map((project, index) => (
-        <motion.div
-          key={index}
-          className="bg-[#1c1e1b] rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }} // Trigger animation on every scroll
-          transition={{
-            duration: 1.5, // Slower animation
-            ease: "easeOut", // Smooth easing
-            delay: index * 0.3, // Slight delay for staggered effect
-          }}
-        >
-          <a href={project.link}>
-            <img
-              src={project.imgSrc}
-              alt={project.title}
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold">{project.title}</h3>
-              <p className="text-sm text-[#d3d3d3] mt-2">{project.description}</p>
-            </div>
-          </a>
-        </motion.div>
-      ))}
+      {allofplan
+        .filter((project) => project._id !== id) // Exclude the current project
+        .slice(0, 3) // Limit to 3 similar projects
+        .map((project, index) => (
+          <motion.div
+            key={project._id}
+            className="bg-[#1c1e1b] rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }} // Trigger animation on every scroll
+            transition={{
+              duration: 1.5, // Slower animation
+              ease: "easeOut", // Smooth easing
+              delay: index * 0.3, // Slight delay for staggered effect
+            }}
+          >
+            <a href={`/projects/off-plan2/${project._id}`}>
+              <img
+                src={project.imgSrcs?.[0] || "/default-image.jpg"} // Fallback image if none exists
+                alt={project.title}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">{project.title}</h3>
+                <p className="text-sm text-[#d3d3d3] mt-2">
+                  {project.description?.substring(0, 100)}...
+                </p>
+              </div>
+            </a>
+          </motion.div>
+        ))}
     </div>
   </div>
 </div>
@@ -292,6 +443,8 @@ const OffPlanDetails = () => {
 
       
     </div>
+    </>
+   
   );
 };
 

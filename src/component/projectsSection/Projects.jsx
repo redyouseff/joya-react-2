@@ -1,8 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 
 function Projects() {
+
+  const [offplan, setoffplan] = useState([]); // State to store blogs
+  const [loading, setLoading] = useState(true); // State to manage loading status
+
+  // Fetch blogs from API
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get("https://joya-back.onrender.com/offplan");
+        setoffplan(response.data.data); // Update blogs state with fetched data
+      } catch (error) {
+        console.error("Error fetching the blogs:", error);
+      } finally {
+        setLoading(false); // Set loading to false
+      }
+    };
+
+    fetchBlogs();
+  }, []); 
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -72,36 +92,44 @@ function Projects() {
   ]
 
   const maxDescriptionLength = 120;
+  console.log(offplan)
 
   return (
     <div className="bg-[#111612] min-h-screen flex flex-col items-center pt-48 pb-12">
-      {/* Off Plan Section */}
-      <h2 className="text-5xl font-semibold text-white mb-14 mt-20" data-aos="fade-down">
-        Off Plan
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl px-4 mb-32">
-        {offPlanCards.map((card, index) => (
-          <a
-            href="/Projects/Off-Plan2"
-            key={index}
-            className="bg-[#1c1e1b] rounded-lg shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
-            data-aos="fade-up"
-            data-aos-delay={`${index * 200}`}
-          >
-            <div className="overflow-hidden rounded-lg mb-6">
-              <img
-                src={card.imgSrc}
-                alt={card.title}
-                className="w-full h-64 object-cover rounded-lg transform transition-transform duration-500 hover:scale-110"
-              />
-            </div>
-            <h3 className="text-3xl font-semibold text-white mb-4">{card.title}</h3>
-            <p className="text-[#a0b3b1] text-base leading-relaxed">
-              {truncateText(card.description, maxDescriptionLength)}
-            </p>
-          </a>
-        ))}
-      </div>
+{/* Off Plan Section */}
+<h2 className="text-5xl font-semibold text-white mb-14 mt-20" data-aos="fade-down">
+  Off Plan
+</h2>
+{loading ? (
+  <p className="text-white text-xl">Loading...</p>
+) : offplan.length === 0 ? (
+  <p className="text-white text-xl">No off-plan projects available.</p>
+) : (
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl px-4 mb-32">
+    {offplan.map((card, index) => (
+      <a
+        href={`/Projects/Off-Plan2/${card._id}`}
+        key={index}
+        className="bg-[#1c1e1b] rounded-lg shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
+        data-aos="fade-up"
+        data-aos-delay={`${index * 200}`}
+      >
+        <div className="overflow-hidden rounded-lg mb-6">
+          <img
+            src={card?.imgSrcs?.[0]}
+            alt={card.title}
+            className="w-full h-64 object-cover rounded-lg transform transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+        <h3 className="text-3xl font-semibold text-white mb-4">{card.title}</h3>
+        <p className="text-[#a0b3b1] text-base leading-relaxed">
+          {truncateText(card.description, maxDescriptionLength)}
+        </p>
+      </a>
+    ))}
+  </div>
+)}
+
 
       {/* Features Section */}
       <h2 className="text-5xl font-semibold text-white mb-14" data-aos="fade-down">
@@ -142,7 +170,7 @@ function Projects() {
             key={index}
             className="bg-[#1c1e1b] rounded-lg shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
             data-aos="fade-up"
-            data-aos-delay={`${index * 200}`}
+            data-aos-delay={`${index * 200}`} 
           >
             <div className="overflow-hidden rounded-lg mb-6">
               <img

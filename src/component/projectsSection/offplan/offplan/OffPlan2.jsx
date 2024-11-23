@@ -16,11 +16,9 @@ function OffPlan2() {
 
   return (
     <div className="bg-[#111612] overflow-hidden">
-      <div data-aos="fade-up">
-        <VisualImage />
-      </div>
+   
   
-
+ 
       <div data-aos="fade-up">
         <FeatureTitle></FeatureTitle>
       </div>
