@@ -29,6 +29,12 @@ const Header = () => {
   const pathName = window.location.pathname;
   const isScrolled = scrollPosition > 0;
 
+  // Close the dropdown or menu when the path changes
+  React.useEffect(() => {
+    setActiveDropdown(null); // Close dropdown menu
+    setIsMenuOpen(false); // Close the main menu
+  }, [pathName]); // Runs every time the path changes
+
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -131,7 +137,11 @@ const Header = () => {
               <div
                 key={link.name}
                 className="relative group"
-                onClick={() => setActiveDropdown(link.name)}
+                onClick={() =>
+                  activeDropdown === link.name
+                    ? setActiveDropdown(null)
+                    : setActiveDropdown(link.name)
+                }
               >
                 <Link
                   to={link.href}
