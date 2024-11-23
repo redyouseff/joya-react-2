@@ -12,7 +12,7 @@ function OffPlan() {
   useEffect(() => {
     const fetchOffPlanData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/offplan");
+        const response = await axios.get("https://joya-back.onrender.com/offplan");
         setOffplan(response.data.data); // Update state with fetched data
       } catch (error) {
         console.error("Error fetching the off-plan data:", error);

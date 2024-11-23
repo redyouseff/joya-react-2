@@ -9,7 +9,7 @@ const OffPlan = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/offplan");
+        const response = await axios.get("https://joya-back.onrender.com/offplan");
         setoffplan(response.data.data); // Update blogs state with fetched data
       } catch (error) {
         console.error("Error fetching the blogs:", error);
