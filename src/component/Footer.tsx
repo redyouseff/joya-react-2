@@ -9,6 +9,25 @@ const links = [
   { name: "Contact", href: "/Contact" },
 ];
 
+const socialMediaLinks = [
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/joyapropertiesluxe",
+  },
+  {
+    icon: Twitter,
+    href: "#", // Replace with the Twitter URL if available
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/joya_properties",
+  },
+  {
+    icon: Linkedin,
+    href: "#", // Replace with the LinkedIn URL if available
+  },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-[#041d1a] text-[#f4f3ef] py-10">
@@ -56,10 +75,12 @@ const Footer = () => {
               Email: info@joyaproperties.com
             </p>
             <div className="flex space-x-6">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
+              {socialMediaLinks.map(({ icon: Icon, href }, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-[#3d6a64] transition-all ease-in-out duration-300"
                 >
                   <Icon size={24} />
@@ -82,9 +103,7 @@ const Footer = () => {
             <p className="text-center text-sm text-[#f0ede6]/80">
               Dubai, business bay,prime
             </p>
-            <p className="text-center text-sm text-[#f0ede6]/80">
-              tower 1401
-            </p>
+            <p className="text-center text-sm text-[#f0ede6]/80">tower 1401</p>
           </div>
         </div>
 
