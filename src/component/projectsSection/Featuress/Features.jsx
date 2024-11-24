@@ -1,8 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 
 function Features() {
+  const [featuresCards, setfeaturesCards] = useState([]); // State to store feature cards data
+  const [loading, setLoading] = useState(true); // State to manage loading status
+
+  // Fetch data from API
+  useEffect(() => {
+    const fetchFeaturesData = async () => {
+      try {
+        const response = await axios.get("https://joya-back.onrender.com/feature");
+        setfeaturesCards(response.data.data); // Update state with fetched data
+      } catch (error) {
+        console.error("Error fetching the feature data:", error);
+      } finally {
+        setLoading(false); // Set loading to false
+      }
+    };
+
+    fetchFeaturesData();
+  }, []);
+
+  // Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -19,21 +40,6 @@ function Features() {
     return text;
   };
 
-  const featuresCards = [
-    {
-      title: "District One Villa",
-      imgSrc: "/off plane/1/WhatsApp Image 2024-11-05 at 02.53.59_940121d8.jpg",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    },
-    {
-      title: "Villa Allegra",
-      imgSrc: "/off plane/2/WhatsApp Image 2024-11-05 at 02.56.29_36f40446.jpg",
-      description:
-        "Experience Luxury Living in Villa Allegra. Situated on the covered Billionaire’s Row of Palm Jumeirah, this exquisite 5-bedroom villa presents an opportunity to live on the most desirable address in Dubai.",
-    },
-  ];
-
   const maxDescriptionLength = 140;
 
   return (
@@ -41,10 +47,10 @@ function Features() {
       <h2 className="text-5xl font-semibold text-white mb-14" data-aos="fade-down">
         Features
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-4xl px-4 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl px-4 mb-20">
         {featuresCards.map((card, index) => (
           <a
-            href="/Projects/Features2"
+            href={`/Projects/Features2/${card._id}`} // Dynamic link with card ID
             key={index}
             className="bg-[#1c1e1b] rounded-lg shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
             data-aos="fade-up"
@@ -52,7 +58,7 @@ function Features() {
           >
             <div className="overflow-hidden rounded-lg mb-6">
               <img
-                src={card.imgSrc}
+                src={card?.imgSrcs?.[0]} // Dynamically display image
                 alt={card.title}
                 className="w-full h-64 object-cover rounded-lg transform transition-transform duration-500 hover:scale-110"
               />

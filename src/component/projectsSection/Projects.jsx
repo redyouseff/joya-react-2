@@ -4,25 +4,36 @@ import "aos/dist/aos.css";
 import axios from "axios";
 
 function Projects() {
-
-  const [offplan, setoffplan] = useState([]); // State to store blogs
+  const [offplan, setOffplan] = useState([]); // State to store off-plan projects
+  const [featuresCards, setFeaturesCards] = useState([]); // State to store feature cards
   const [loading, setLoading] = useState(true); // State to manage loading status
 
-  // Fetch blogs from API
+  // Fetch projects from APIs
   useEffect(() => {
-    const fetchBlogs = async () => {
+    const fetchProjects = async () => {
       try {
-        const response = await axios.get("https://joya-back.onrender.com/offplan");
-        setoffplan(response.data.data); // Update blogs state with fetched data
+        // Fetch off-plan projects
+        const offplanResponse = await axios.get("https://joya-back.onrender.com/offplan");
+        setOffplan(offplanResponse.data.data);
       } catch (error) {
-        console.error("Error fetching the blogs:", error);
+        console.error("Error fetching off-plan projects:", error);
+      }
+
+      try {
+        // Fetch features projects
+        const featuresResponse = await axios.get("https://joya-back.onrender.com/feature");
+        setFeaturesCards(featuresResponse.data.data);
+      } catch (error) {
+        console.error("Error fetching feature cards:", error);
       } finally {
-        setLoading(false); // Set loading to false
+        setLoading(false); // Set loading to false after fetching
       }
     };
 
-    fetchBlogs();
-  }, []); 
+    fetchProjects();
+  }, []);
+
+  // Initialize AOS for animations
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -32,6 +43,7 @@ function Projects() {
     });
   }, []);
 
+  // Helper function to truncate text
   const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
       return text.slice(0, maxLength) + "...";
@@ -39,106 +51,52 @@ function Projects() {
     return text;
   };
 
-  const offPlanCards = [
-    {
-      title: "Bugatti Residences",
-      description:
-        "Bugatti Residences by Binghatti is a luxury project in Dubai, combining expert craftsmanship with the impeccable heritage of Bugatti. This architectural marvel captures the essence of French Riviera and Dubai dunes.",
-      imgSrc: "/features/WhatsApp Image 2024-11-04 at 21.54.12_4a2182ac.jpg",
-    },
-    {
-      title: "The Acres Estates",
-      description:
-        "The Acres Estates is an exclusive collection of villas offering spacious living with a sustainable community focus. Enjoy private pools, gardens, and serene views of lush landscapes.",
-      imgSrc: "/features/project2/WhatsApp Image 2024-11-04 at 23.44.28_17385a5b.jpg",
-    },
-    {
-      title: "GREENRIDGE",
-      description:
-        "Greenridge provides a balanced lifestyle for families, blending privacy with vibrant community life in stunning 3- and 4-bedroom townhouses surrounded by landscaped beauty.",
-      imgSrc: "/features/project3/WhatsApp Image 2024-11-04 at 23.51.53_aa60586b.jpg",
-    },
-  ];
-
-  const featuresCards = [
-    {
-      title: "District One Villa",
-      description:
-        "District One Villa offers luxury living with spacious interiors and lush surroundings in one of Dubai’s most prestigious neighborhoods...",
-      imgSrc: "/off plane/1/WhatsApp Image 2024-11-05 at 02.53.59_940121d8.jpg",
-    },
-    {
-      title: "Villa Allegra",
-      description:
-        "Experience luxury living in Villa Allegra, situated on the renowned Billionaire’s Row of Palm Jumeirah...",
-      imgSrc: "/off plane/2/WhatsApp Image 2024-11-05 at 02.56.29_36f40446.jpg",
-    },
-  ];
-
-  const Luxury=[
-
-    {
-      title: "District One Villa",
-      description:
-        "District One Villa offers luxury living with spacious interiors and lush surroundings in one of Dubai’s most prestigious neighborhoods...",
-      imgSrc: "/off plane/1/WhatsApp Image 2024-11-05 at 02.53.59_940121d8.jpg",
-    },
-    {
-      title: "Villa Allegra",
-      description:
-        "Experience luxury living in Villa Allegra, situated on the renowned Billionaire’s Row of Palm Jumeirah...",
-      imgSrc: "/off plane/2/WhatsApp Image 2024-11-05 at 02.56.29_36f40446.jpg",
-    },
-  ]
-
   const maxDescriptionLength = 120;
-  console.log(offplan)
 
   return (
     <div className="bg-[#111612] min-h-screen flex flex-col items-center pt-48 pb-12">
-{/* Off Plan Section */}
-<h2 className="text-5xl font-semibold text-white mb-14 mt-20" data-aos="fade-down">
-  Off Plan
-</h2>
-{loading ? (
-  <p className="text-white text-xl">Loading...</p>
-) : offplan.length === 0 ? (
-  <p className="text-white text-xl">No off-plan projects available.</p>
-) : (
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl px-4 mb-32">
-    {offplan.map((card, index) => (
-      <a
-        href={`/Projects/Off-Plan2/${card._id}`}
-        key={index}
-        className="bg-[#1c1e1b] rounded-lg shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
-        data-aos="fade-up"
-        data-aos-delay={`${index * 200}`}
-      >
-        <div className="overflow-hidden rounded-lg mb-6">
-          <img
-            src={card?.imgSrcs?.[0]}
-            alt={card.title}
-            className="w-full h-64 object-cover rounded-lg transform transition-transform duration-500 hover:scale-110"
-          />
+      {/* Off Plan Section */}
+      <h2 className="text-5xl font-semibold text-white mb-14 mt-20" data-aos="fade-down">
+        Off Plan
+      </h2>
+      {loading ? (
+        <p className="text-white text-xl">Loading...</p>
+      ) : offplan.length === 0 ? (
+        <p className="text-white text-xl">No off-plan projects available.</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl px-4 mb-32">
+          {offplan.map((card, index) => (
+            <a
+              href={`/Projects/Off-Plan2/${card._id}`}
+              key={index}
+              className="bg-[#1c1e1b] rounded-lg shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay={`${index * 200}`}
+            >
+              <div className="overflow-hidden rounded-lg mb-6">
+                <img
+                  src={card?.imgSrcs?.[0] || "/default-image.jpg"}
+                  alt={card.title}
+                  className="w-full h-64 object-cover rounded-lg transform transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <h3 className="text-3xl font-semibold text-white mb-4">{card.title}</h3>
+              <p className="text-[#a0b3b1] text-base leading-relaxed">
+                {truncateText(card.description, maxDescriptionLength)}
+              </p>
+            </a>
+          ))}
         </div>
-        <h3 className="text-3xl font-semibold text-white mb-4">{card.title}</h3>
-        <p className="text-[#a0b3b1] text-base leading-relaxed">
-          {truncateText(card.description, maxDescriptionLength)}
-        </p>
-      </a>
-    ))}
-  </div>
-)}
-
+      )}
 
       {/* Features Section */}
       <h2 className="text-5xl font-semibold text-white mb-14" data-aos="fade-down">
         Features
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-4xl px-4 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl px-4 mb-20">
         {featuresCards.map((card, index) => (
           <a
-            href="/Projects/Features2"
+            href={`/Projects/Features2/${card._id}`} // Dynamic link for features
             key={index}
             className="bg-[#1c1e1b] rounded-lg shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
             data-aos="fade-up"
@@ -146,7 +104,7 @@ function Projects() {
           >
             <div className="overflow-hidden rounded-lg mb-6">
               <img
-                src={card.imgSrc}
+                src={card.imgSrcs?.[0] || "/default-image.jpg"} // Fallback image
                 alt={card.title}
                 className="w-full h-64 object-cover rounded-lg transform transition-transform duration-500 hover:scale-110"
               />
@@ -159,22 +117,22 @@ function Projects() {
         ))}
       </div>
 
-         {/* Features Section */}
-         <h2 className="text-5xl font-semibold text-white mb-14" data-aos="fade-down">
+      {/* Luxury Section */}
+      <h2 className="text-5xl font-semibold text-white mb-14" data-aos="fade-down">
         Luxury
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-4xl px-4 mb-20">
-        {Luxury.map((card, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl px-4 mb-20">
+        {featuresCards.map((card, index) => (
           <a
-            href="/Projects/Features2"
+            href={`/Projects/Features2/${card._id}`} // Dynamic link for luxury
             key={index}
             className="bg-[#1c1e1b] rounded-lg shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
             data-aos="fade-up"
-            data-aos-delay={`${index * 200}`} 
+            data-aos-delay={`${index * 200}`}
           >
             <div className="overflow-hidden rounded-lg mb-6">
               <img
-                src={card.imgSrc}
+                src={card.imgSrcs?.[0] || "/default-image.jpg"} // Fallback image
                 alt={card.title}
                 className="w-full h-64 object-cover rounded-lg transform transition-transform duration-500 hover:scale-110"
               />
