@@ -15,11 +15,11 @@ const OurVision = () => {
           </div>
           <p className="text-sm lg:text-lg font-serif text-[#f1f0ec] whitespace-pre-wrap leading-relaxed">
             Joya Properties aims to become a leading boutique real estate agency
-            that goes beyond mere property transactions. Their purpose is to
+            that goes beyond mere property transactions. Our purpose is to
             empower clients and team members to achieve financial freedom
             through thoughtful, bespoke real estate solutions. By cultivating
             lasting partnerships grounded in trust, personalized service, and
-            exceptional market expertise, they strive to become a globally
+            exceptional market expertise,We strive to become a globally
             recognized agency celebrated for fostering enduring relationships,
             loyalty, and success.
           </p>
