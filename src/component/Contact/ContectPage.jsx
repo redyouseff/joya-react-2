@@ -106,7 +106,7 @@
                     <input
                       type="text"
                       placeholder=" Budget"
-                      className="p-4 bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md"
+                      className="p-4 bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md mt-4"
                     />
                   </div>
 
