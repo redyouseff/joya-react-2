@@ -65,15 +65,17 @@ const Footer = () => {
 
           {/* Contact Information and Social Media */}
           <div>
+
             <h4 className="text-lg font-semibold mb-4 text-[#a0b3b1]">
               Contact Us
             </h4>
             <p className="text-base text-[#f0ede6]/80 mb-1">
-              Phone: +971 4 765 4321
-            </p>
-            <p className="text-base text-[#f0ede6]/80 mb-1">
             Dubai, business bay,prime tower 1401
             </p>
+            <p className="text-base text-[#f0ede6]/80 mb-1">
+              Phone: +971 4 765 4321
+            </p>
+  
             <p className="text-base text-[#f0ede6]/80 mb-4">
               Email: info@joyaproperties.com
             </p>
