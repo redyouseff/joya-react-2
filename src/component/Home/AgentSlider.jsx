@@ -113,7 +113,7 @@ function AgentSlider() {
           STRONG NETWORK IN DUBAI & UAE
         </p>
         <h1 className="text-2xl md:text-4xl text-[#f1f0ec] font-header mb-8">
-          OUR AGENTS
+        Our Partners
         </h1>
         <div className="mx-10 md:mx-14 mt-3 py-8 gap-x-2 slick-initialized" dir="ltr">
           <Slider {...settings}>

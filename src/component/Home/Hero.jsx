@@ -33,84 +33,41 @@ const Hero = () => {
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination, Navigation]}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
-        {/* Slide 1 */}
-        <SwiperSlide>
-          <div className="relative h-screen transition-transform duration-1000 ease-in-out">
-            <div className="absolute inset-0">
-              <img src={image1} alt="Joya Home" className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" />
-              <div className="absolute z-[1] inset-x-0 top-[-300px] h-[300px] bg-gradient-to-t from-black to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent"></div>
-            </div>
-            <div className="absolute bottom-0 left-0 p-[60px] z-10 flex items-end justify-start h-full text-start text-white transition-opacity duration-1000 ease-in-out">
-              <div>
-                <h1>
-                  <span className="text-white text-[30px] leading-[34px] font-light uppercase">VILLA AMAILA</span>
-                </h1>
-                <p className="text-base mt-1 leading-4 font-extralight uppercase">AlBARARI</p>
+        {[image1, image2, image3, image4].map((image, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative h-screen transition-transform duration-1000 ease-in-out">
+              <div className="absolute inset-0">
+                <img
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+                />
+                <div className="absolute z-[1] inset-x-0 top-[-300px] h-[300px] bg-gradient-to-t from-black to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 p-[60px] z-10 flex flex-col justify-end h-full text-start text-white transition-opacity duration-1000 ease-in-out">
+                <div>
+                  <h1>
+                    <span className="text-white text-[30px] leading-[34px] font-light uppercase">
+                      VILLA AMAILA
+                    </span>
+                  </h1>
+                  <p className="text-base mt-1 leading-4 font-extralight uppercase">AlBARARI</p>
+                </div>
+              </div>
+              {/* Button Positioned at Bottom-Right */}
+              <div className="absolute bottom-10 right-10 z-20">
+                <a
+                  href="/Projects/Features2/67435e58ddd453022f0618e0"
+                  className="bg-white text-black py-2 px-4 rounded-md font-medium transition duration-300 hover:bg-gray-200"
+                >
+                  View Details
+                </a>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 2 */}
-        <SwiperSlide>
-          <div className="relative h-screen transition-transform duration-1000 ease-in-out">
-            <div className="absolute inset-0">
-              <img src={image2} alt="Joya Home" className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" />
-              <div className="absolute z-[1] inset-x-0 top-[-300px] h-[300px] bg-gradient-to-t from-black to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent"></div>
-            </div>
-            <div className="absolute bottom-0 left-0 p-[60px] z-10 flex items-end justify-start h-full text-start text-white transition-opacity duration-1000 ease-in-out">
-              <div>
-                <h1>
-                  <span className="text-white text-[30px] leading-[34px] font-light uppercase">VILLA AMAILA</span>
-                </h1>
-                <p className="text-base mt-1 leading-4 font-extralight uppercase">AlBARARI</p>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 3 */}
-        <SwiperSlide>
-          <div className="relative h-screen transition-transform duration-1000 ease-in-out">
-            <div className="absolute inset-0">
-              <img src={image3} alt="Joya Home" className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" />
-              <div className="absolute z-[1] inset-x-0 top-[-300px] h-[300px] bg-gradient-to-t from-black to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent"></div>
-            </div>
-            <div className="absolute bottom-0 left-0 p-[60px] z-10 flex items-end justify-start h-full text-start text-white transition-opacity duration-1000 ease-in-out">
-              <div>
-                <h1>
-                  <span className="text-white text-[30px] leading-[34px] font-light uppercase">VILLA AMAILA</span>
-                </h1>
-                <p className="text-base mt-1 leading-4 font-extralight uppercase">AlBARARI</p>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 4 */}
-        <SwiperSlide>
-          <div className="relative h-screen transition-transform duration-1000 ease-in-out">
-            <div className="absolute inset-0">
-              <img src={image4} alt="Joya Home" className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" />
-              <div className="absolute z-[1] inset-x-0 top-[-300px] h-[300px] bg-gradient-to-t from-black to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent"></div>
-            </div>
-            <div className="absolute bottom-0 left-0 p-[60px] z-10 flex items-end justify-start h-full text-start text-white transition-opacity duration-1000 ease-in-out">
-              <div>
-                <h1>
-                  <span className="text-white text-[30px] leading-[34px] font-light uppercase">VILLA AMAILA</span>
-                </h1>
-                <p className="text-base mt-1 leading-4 font-extralight uppercase">AlBARARI</p>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       <div className="relative mx-auto h-0 flex items-center z-20 -top-12 justify-center w-fit">

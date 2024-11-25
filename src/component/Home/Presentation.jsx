@@ -31,9 +31,7 @@ const Presentation = () => {
                 style={{ maxHeight: '855px' }}
               />
               <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-[#404740]/90 to-transparent rounded-b-lg">
-                <h3 className="text-3xl font-semibold mb-4 text-[#EFECE6]">
-                  Embrace joya properties
-                </h3>
+               
               </div>
             </div>
           </div>

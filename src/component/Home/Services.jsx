@@ -33,43 +33,44 @@ const Services = () => {
         </h2>
 
         {/* Grid for Main Services */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+        <div className="flex flex-wrap justify-center items-center gap-12">
+          {/* First Row */}
           {services.slice(0, 3).map((service, index) => (
             <div
               key={index}
-              className="p-8 bg-[#111810] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-64"
+              className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-72"
             >
               {/* Icon */}
-              <div className="w-16 h-16 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-6 group-hover:bg-opacity-90 transition duration-300">
-                {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 40 })}
+              <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-8 group-hover:bg-opacity-90 transition duration-300">
+                {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 50 })}
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-medium text-[#faf8f7] mb-3">
+              <h3 className="text-xl font-semibold text-[#faf8f7]">
                 {service.title}
               </h3>
             </div>
           ))}
-        </div>
 
-        {/* Centered Row for Last Two Services */}
-        <div className="flex justify-center gap-16 mt-16">
-          {services.slice(3).map((service, index) => (
-            <div
-              key={index}
-              className="p-8 bg-[#111810] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-64"
-            >
-              {/* Icon */}
-              <div className="w-16 h-16 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-6 group-hover:bg-opacity-90 transition duration-300">
-                {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 40 })}
+          {/* Second Row - Centered */}
+          <div className="flex gap-12">
+            {services.slice(3).map((service, index) => (
+              <div
+                key={index}
+                className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-72"
+              >
+                {/* Icon */}
+                <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-8 group-hover:bg-opacity-90 transition duration-300">
+                  {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 50 })}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-[#faf8f7]">
+                  {service.title}
+                </h3>
               </div>
-
-              {/* Title */}
-              <h3 className="text-lg font-medium text-[#faf8f7] mb-3">
-                {service.title}
-              </h3>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { Mail, Phone, Globe } from "lucide-react";
 import { Pagination, Autoplay } from "swiper/modules";
 import image1 from "../../images/sliders/image 1.png";
 import image2 from "../../images/sliders/image 2.png";
-import image3 from "../../images/sliders/new/slina.jpg"
+import image3 from "../../images/sliders/new/slina.jpg";
 
 const teamMembers = [
   {
@@ -14,18 +14,11 @@ const teamMembers = [
     img: image1,
     languages: "English, Arabic",
   },
-  ,
   {
     name: "Simona",
     role: "Sales Manager",
     img: image3,
     languages: "English, Bulgarian",
-  },
-  {
-    name: "Mohammad Rabie",
-    role: "Co-founder and Managing Director",
-    img: image1,
-    languages: "English, Arabic",
   },
   {
     name: "Nabeel Hammudeh",
@@ -33,35 +26,24 @@ const teamMembers = [
     img: image2,
     languages: "English, Arabic",
   },
-  {
-    name: "Simona",
-    role: "Sales Manager",
-    img: image3,
-    languages: "English, Bulgarian",
-  },
 ];
 
 const TeamSlider = () => {
   return (
-    <section className="py-16 bg-black text-[#EFECE6] mt-10">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section className="py-16 bg-black text-[#EFECE6] flex items-center justify-center min-h-screen">
+      <div className="container mx-auto px-6 lg:px-12 text-center">
         {/* Title Section */}
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-bold text-[#f1f0ec]">The Team</h2>
-            <h3 className="text-[14px] md:text-xl text-[#f0ede6]">
-              With unrivaled expertise in the JOYA market, our advisors will guide
-              you on your journey.
-            </h3>
-          </div>
-          <a href="/en/team/" className="text-[#faf8f7] hover:underline text-[10px] md:text-base">
-            Meet The Team
-          </a>
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#f1f0ec]">The Team</h2>
+          <h3 className="text-[14px] md:text-xl text-[#f0ede6] mt-2">
+            With unrivaled expertise in the JOYA market, our advisors will guide
+            you on your journey.
+          </h3>
         </div>
 
         {/* Swiper Component */}
         <Swiper
-          spaceBetween={-30}
+          spaceBetween={30}
           slidesPerView={3}
           loop={true}
           autoplay={{
@@ -70,16 +52,15 @@ const TeamSlider = () => {
           }}
           pagination={{
             clickable: true,
-            el: ".custom-pagination", // Specify custom element for pagination
-            bulletClass: "swiper-pagination-bullet", // Default class for bullets
+            el: ".custom-pagination",
+            bulletClass: "swiper-pagination-bullet",
             renderBullet: (index, className) =>
               `<span class="${className}" style="background-color: #ffffff; opacity: 0.7; margin: 0 4px;"></span>`,
           }}
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 10 },
-            640: { slidesPerView: 2, spaceBetween: 15 },
-            1024: { slidesPerView: 3, spaceBetween: 20 },
-            1440: { slidesPerView: 4, spaceBetween: 30 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
           }}
           modules={[Pagination, Autoplay]}
         >
