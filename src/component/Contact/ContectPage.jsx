@@ -39,10 +39,7 @@
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
                 >
-                  <h2 className="text-4xl lg:text-[80px] font-light leading-none text-[#9da5a4] mt-6">
-                    <span className="block w-40 h-1 bg-[#9da5a4] mb-4 mx-auto"></span>
-                    For Joya Properties
-                  </h2>
+                 
                 </motion.div>
               </div>
 
@@ -60,20 +57,10 @@
                   <div className="tabs mb-8">
                     <ul className="flex space-y-6 md:space-y-0 md:space-x-2 md:flex-row flex-col">
                       <li>
-                        <a
-                          href="#"
-                          className="tab-contact p-2 border border-[#698f8c] hover:border-[#a0b3b1] rounded-md"
-                        >
-                          Buy with us
-                        </a>
+                     
                       </li>
                       <li>
-                        <a
-                          href="#"
-                          className="tab-contact p-2 border border-[#698f8c] hover:border-[#a0b3b1] rounded-md"
-                        >
-                          Sell with us
-                        </a>
+                       
                       </li>
                       <li>
                         <a
@@ -84,12 +71,7 @@
                         </a>
                       </li>
                       <li>
-                        <a
-                          href="#"
-                          className="tab-contact p-2 border border-[#698f8c] hover:border-[#a0b3b1] rounded-md"
-                        >
-                          Other
-                        </a>
+                     
                       </li>
                     </ul>
                   </div>
@@ -117,26 +99,20 @@
                     />
                   </div>
 
-                  <p className="text-xl uppercase text-[#9da5a4] mt-10 mb-6">
-                    Your Criteria
-                  </p>
+                
 
                   <div className="grid grid-cols-2 gap-6">
+                  
                     <input
                       type="text"
-                      placeholder="Your Location"
-                      className="p-4 bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Your Budget"
+                      placeholder=" Budget"
                       className="p-4 bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md"
                     />
                   </div>
 
                   <textarea
                     rows={5}
-                    placeholder="Your Requirements"
+                    placeholder=" Requirements"
                     className="p-4 mt-6 w-full bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md"
                   ></textarea>
 
@@ -170,10 +146,8 @@
                       rel="noopener noreferrer"
                       className="flex items-center space-x-4"
                     >
-                      <span className="circle w-10 h-10 flex items-center justify-center bg-[#698f8c] rounded-full text-white">
-                        <i className="fab fa-whatsapp"></i>
-                      </span>
-                      <span className="text text-[#9da5a4]">Send us a message</span>
+                   
+                    
                     </a>
 
                       {/* Map Section */}
