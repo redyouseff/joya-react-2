@@ -26,48 +26,45 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-16 text-[#EFECE6] mt-10">
+    <section className="py-16 bg-[#0e1414] text-[#EFECE6]">
       <div className="container mx-auto px-6 lg:px-12">
+        {/* Section Title */}
         <h2 className="text-5xl font-extrabold text-center mb-12 text-[#f0ede6]">
           Our Signature Services
         </h2>
 
-        {/* Grid for Main Services */}
-        <div className="flex flex-wrap justify-center items-center gap-12">
+        {/* Grid for Services */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {/* First Row */}
           {services.slice(0, 3).map((service, index) => (
             <div
               key={index}
-              className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-72"
+              className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center w-72"
             >
               {/* Icon */}
-              <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-8 group-hover:bg-opacity-90 transition duration-300">
+              <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-6">
                 {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 50 })}
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-[#faf8f7]">
-                {service.title}
-              </h3>
+              <h3 className="text-xl font-semibold text-[#faf8f7]">{service.title}</h3>
             </div>
           ))}
 
-          {/* Second Row - Centered */}
-          <div className="flex gap-12">
+          {/* Second Row */}
+          <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center">
             {services.slice(3).map((service, index) => (
               <div
                 key={index}
-                className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-72"
+                className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center w-72"
               >
                 {/* Icon */}
-                <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-8 group-hover:bg-opacity-90 transition duration-300">
+                <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-6">
                   {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 50 })}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-[#faf8f7]">
-                  {service.title}
-                </h3>
+                <h3 className="text-xl font-semibold text-[#faf8f7]">{service.title}</h3>
               </div>
             ))}
           </div>
