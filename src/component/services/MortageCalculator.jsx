@@ -69,12 +69,20 @@ const MortgageCalculator = () => {
             </div>
 
             <div className="space-y-4 mt-8">
-              <h3 className="text-xl font-semibold text-white">Ready to take the next step?</h3>
-              <p className="text-[#a0b3b1]">Our team of experts can help you find the best mortgage rate for your purchase journey.</p>
-              <button className="w-full bg-[#698f8c] text-[#faf8f7] py-3 rounded-lg shadow-lg hover:bg-[#a0b3b1] transition-all duration-200">
-                Get pre-approved
-              </button>
-            </div>
+  <h3 className="text-xl font-semibold text-white">Ready to take the next step?</h3>
+  <p className="text-[#a0b3b1]">
+    Our team of experts can help you find the best mortgage rate for your purchase journey.
+  </p>
+  <a
+    href="https://wa.me/971585976060"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-full block bg-[#698f8c] text-center text-[#faf8f7] py-3 rounded-lg shadow-lg hover:bg-[#a0b3b1] transition-all duration-200"
+  >
+    Get pre-approved
+  </a>
+</div>
+
           </div>
         </div>
       </div>

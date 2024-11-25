@@ -33,14 +33,14 @@ const Header = () => {
   React.useEffect(() => {
     setActiveDropdown(null); // Close dropdown menu
     setIsMenuOpen(false); // Close the main menu
-  }, [pathName]); // Runs every time the path changes
+  }, [pathName]);
 
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-gradient-to-t from-transparent to-[#111612] bg-opacity-90 h-[80px]"
-          : "bg-gradient-to-t from-transparent to-[#111612] h-[140px]"
+          ? "bg-gradient-to-t from-[#111612]/90 to-[#111612]/95 backdrop-blur-md h-[80px]"
+          : "bg-gradient-to-t from-[#111612]/70 to-transparent h-[140px]"
       } shadow-lg`}
     >
       <div className="relative h-full">
@@ -86,16 +86,18 @@ const Header = () => {
                 </Link>
                 {/* Dropdown Menu */}
                 {link.subLinks && activeDropdown === link.name && (
-                  <div className="absolute w-[100px] left-0 pt-5 bg-transparent text-[#f1f0ec] rounded-lg shadow-lg transition-opacity duration-300 ease-in-out opacity-100">
+                  <div className="absolute w-[200px] left-0 pt-5 bg-[#111612]/90 text-[#f1f0ec] rounded-lg shadow-lg transition-opacity duration-300 ease-in-out opacity-100 backdrop-blur-md">
                     {link.subLinks.map((subLink) => (
                       <Link
                         key={subLink.name}
                         to={subLink.href}
-                        className={`block link py-2 ${
+                        className={`block link py-2 px-4 hover:bg-[#3d6a64] ${
                           pathName === subLink.href ? "link-active" : ""
                         }`}
                       >
-                        <span className={pathName === link.href ? "active" : ""}>
+                        <span
+                          className={pathName === subLink.href ? "active" : ""}
+                        >
                           {subLink.name}
                         </span>
                       </Link>

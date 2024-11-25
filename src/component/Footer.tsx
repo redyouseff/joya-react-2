@@ -71,7 +71,7 @@ const Footer = () => {
             <p className="text-base text-[#f0ede6]/80 mb-1">
               Dubai, Business Bay, Prime Tower 1401
             </p>
-            <p className="text-base text-[#f0ede6]/80 mb-1">Phone: +971 4 765 4321</p>
+            <p className="text-base text-[#f0ede6]/80 mb-1">Phone: +971 58 597 6060</p>
             <p className="text-base text-[#f0ede6]/80 mb-4">
               Email: info@joyaproperties.com
             </p>
