@@ -59,7 +59,7 @@ const Hero = () => {
               {/* Button Positioned at Bottom-Right */}
               <div className="absolute bottom-10 right-10 z-20">
                 <a
-                  href="/Projects/Features2/67435e58ddd453022f0618e0"
+                  href="https://joya22.vercel.app/Projects/Features2/67434e7c1a8311a148b08797"
                   className="bg-white text-black py-2 px-4 rounded-md font-medium transition duration-300 hover:bg-gray-200"
                 >
                   View Details

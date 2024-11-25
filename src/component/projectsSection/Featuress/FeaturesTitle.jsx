@@ -53,7 +53,7 @@ const FeatureTitleDuplicate = () => {
 
         {/* Title Overlay */}
         <div className="absolute bottom-10 left-10 z-20 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold">{project.title || "Feature Title"}</h1>
+          <h1 className="text-4xl md:text-6xl font-bold">{project.title }</h1>
         </div>
 
         {/* Gradient Overlay */}

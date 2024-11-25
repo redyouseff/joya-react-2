@@ -71,6 +71,9 @@ const Footer = () => {
             <p className="text-base text-[#f0ede6]/80 mb-1">
               Phone: +971 4 765 4321
             </p>
+            <p className="text-base text-[#f0ede6]/80 mb-1">
+            Dubai, business bay,prime tower 1401
+            </p>
             <p className="text-base text-[#f0ede6]/80 mb-4">
               Email: info@joyaproperties.com
             </p>
@@ -100,10 +103,7 @@ const Footer = () => {
               loading="lazy"
               className="rounded-lg mb-2"
             ></iframe>
-            <p className="text-center text-sm text-[#f0ede6]/80">
-              Dubai, business bay,prime
-            </p>
-            <p className="text-center text-sm text-[#f0ede6]/80">tower 1401</p>
+           
           </div>
         </div>
 
