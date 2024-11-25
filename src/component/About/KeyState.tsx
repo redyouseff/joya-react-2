@@ -2,9 +2,9 @@ import React from "react";
 
 const KeyStats = () => {
   const stats = [
-    { value: "6 years", label: "Experience compaind 6 years" },
-    { value: "86", label: "Sold & lease property" },
-    { value: "2023", label: "Year Established" },
+    { value: "6 years", label: "Over 6 years of combined experience " },
+    { value: "86", label: "Sold and Leased properties" },
+    { value: "2024", label: "Year Established" },
   ];
 
   return (

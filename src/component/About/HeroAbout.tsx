@@ -44,9 +44,14 @@ const HeroAbout = () => {
                 </p>
 
                 {/* Call to Action Button */}
-                <button className="bg-[#687878] text-white px-6 md:px-10 py-2 md:py-3 rounded-md text-xs md:text-sm lg:text-base transition-all duration-300 ease-in-out transform hover:bg-[#3d6a64] hover:md:scale-110">
+                <a
+                  href="https://wa.me/971585976060"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#687878] text-white px-6 md:px-10 py-2 md:py-3 rounded-md text-xs md:text-sm lg:text-base transition-all duration-300 ease-in-out transform hover:bg-[#3d6a64] hover:md:scale-110"
+                >
                   Get In Touch
-                </button>
+                </a>
               </div>
             </div>
           </div>
