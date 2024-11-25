@@ -35,7 +35,8 @@ const Services = () => {
 
         {/* Grid for Services */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-          {services.map((service, index) => (
+          {/* First Row */}
+          {services.slice(0, 3).map((service, index) => (
             <div
               key={index}
               className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center w-72"
@@ -49,6 +50,24 @@ const Services = () => {
               <h3 className="text-xl font-semibold text-[#faf8f7]">{service.title}</h3>
             </div>
           ))}
+
+          {/* Second Row */}
+          <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center">
+            {services.slice(3).map((service, index) => (
+              <div
+                key={index}
+                className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center w-72 m-10"
+              >
+                {/* Icon */}
+                <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-6">
+                  {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 50 })}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-[#faf8f7]">{service.title}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
