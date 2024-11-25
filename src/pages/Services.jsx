@@ -11,7 +11,7 @@ import ServicesVisualImage from "../component/services/ServicesVisualImage";
 import ServiceTitle from "../component/services/ServiceTitle";
 import ServiceCardsSection from "../component/services/ServiceCardsSection";
 import MortageCalculator from "../component/services/MortageCalculator";
-import image1 from "../images/sliders/new/3.jpg";
+import image1 from "../images/sliders/new/4.jpg";
 
 
 

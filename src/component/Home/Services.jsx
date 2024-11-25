@@ -40,9 +40,12 @@ const Services = () => {
             <div
               key={index}
               className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center w-72"
+              style={{
+                
+              }}
             >
               {/* Icon */}
-              <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-6">
+              <div className="w-20 h-20  bg-[#3d6a64] rounded-full flex items-center justify-center mb-6" >
                 {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 50 })}
               </div>
 
@@ -56,7 +59,7 @@ const Services = () => {
             {services.slice(3).map((service, index) => (
               <div
                 key={index}
-                className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center w-72 m-10"
+                className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center w-72 "
               >
                 {/* Icon */}
                 <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-6">
