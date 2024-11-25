@@ -50,7 +50,8 @@ const Hero = () => {
                 <div>
                   <h1>
                     <span className="text-white text-[30px] leading-[34px] font-light uppercase">
-                      VILLA AMAILA
+                    Villa Allegra
+
                     </span>
                   </h1>
                   <p className="text-base mt-1 leading-4 font-extralight uppercase">AlBARARI</p>
