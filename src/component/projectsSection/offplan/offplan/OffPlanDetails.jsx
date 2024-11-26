@@ -8,8 +8,13 @@ import icon3 from  "../../../../images/icons/DXB.svg"
 import icon4 from "../../../../images/icons/Downtown.svg"
 
 import icon5 from "../../../../images/icons/new/Wallet.svg"
-import icon6 from "../../../../images/icons/new/Special offer.svg"
-import icon7 from "../../../../images/icons/new/Property Booking.svg"
+import icon6 from "../../../../images/icons/Booking fees.svg"
+import icon7 from "../../../../images/icons/handover.svg"
+import icon8 from "../../../../images/icons/Beds.svg"
+
+
+ 
+
 import VisualImage from "./VisualImage";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -208,48 +213,57 @@ const proximity= [
 
       
      <div className="bg-[#111612] text-[#faf8f7]">
- {/* Icons Section */}
+{/* Icons Section */}
 <div className="py-10 mt-10">
-  <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-    <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4">
-      <img
-        src={icon5}
-        alt="Starting Price Icon"
-        className="w-12 h-12 mb-4 sm:mb-0" // Icon size and spacing for mobile
-      />
-      <div>
-        <p className="text-lg font-semibold">AED 1,040,000</p>
-        <span className="text-sm text-[#d3d3d3]">Starting Price</span>
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div className="flex flex-col items-center space-y-2">
+        <img
+          src={icon5}
+          alt="Starting Price Icon"
+          className="w-12 h-12 mb-2" // Icon size
+        />
+        <div>
+          <p className="text-lg font-semibold">AED 1,040,000</p>
+          <span className="text-sm text-[#d3d3d3]">Starting Price</span>
+        </div>
       </div>
-    </div>
-    <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4">
-      <img
-        src={icon6}
-        alt="Special Conditions Icon"
-        className="w-12 h-12 mb-4 sm:mb-0" // Icon size and spacing for mobile
-      />
-      <div>
-        <p className="text-lg font-semibold">Special Conditions</p>
-        <span className="text-sm text-[#d3d3d3]">Apply Now</span>
+      <div className="flex flex-col items-center space-y-2">
+        <img
+          src={icon6}
+          alt="Special Conditions Icon"
+          className="w-12 h-12 mb-2" // Icon size
+        />
+        <div>
+          <p className="text-lg font-semibold">Special Conditions</p>
+          <span className="text-sm text-[#d3d3d3]">Apply Now</span>
+        </div>
       </div>
-    </div>
-    <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4">
-      <img
-        src={icon7}
-        alt="Buy Property Icon"
-        className="w-12 h-12 mb-4 sm:mb-0" // Icon size and spacing for mobile
-      />
-      <div>
-        <p className="text-lg font-semibold">Buy Property</p>
-        <span className="text-sm text-[#d3d3d3]">Directly from Developer</span>
+      <div className="flex flex-col items-center space-y-2">
+        <img
+          src={icon7}
+          alt="Buy Property Icon"
+          className="w-12 h-12 mb-2" // Icon size
+        />
+        <div>
+          <p className="text-lg font-semibold">Buy Property</p>
+          <span className="text-sm text-[#d3d3d3]">Directly from Developer</span>
+        </div>
+      </div>
+      <div className="flex flex-col items-center space-y-2">
+        <img
+          src={icon8}
+          alt="Another Property Icon"
+          className="w-12 h-12 mb-2" // Icon size
+        />
+        <div>
+          <p className="text-lg font-semibold">Buy Property</p>
+          <span className="text-sm text-[#d3d3d3]">Directly from Developer</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
 
 
 
