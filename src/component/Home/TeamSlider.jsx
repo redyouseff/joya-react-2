@@ -8,9 +8,16 @@ import image2 from "../../images/sliders/image 2.png";
 import image3 from "../../images/sliders/new/slina.jpg";
 
 const teamMembers = [
+
+  {
+    name: "Nabeel Hammudeh",
+    role: "Co-founder and Managing Director",
+    img: image2,
+    languages: "English, Arabic",
+  },
   {
     name: "Mohammad Rabie",
-    role: "Co-founder and Managing Director",
+    role: "Sales and Marketing Manager",
     img: image1,
     languages: "English, Arabic",
   },
@@ -20,12 +27,7 @@ const teamMembers = [
     img: image3,
     languages: "English, Bulgarian",
   },
-  {
-    name: "Nabeel Hammudeh",
-    role: "Sales and Marketing Manager",
-    img: image2,
-    languages: "English, Arabic",
-  },
+
 ];
 
 const TeamSlider = () => {
@@ -93,13 +95,7 @@ const TeamSlider = () => {
         </Swiper>
 
         {/* Custom Pagination */}
-        <div
-          className="custom-pagination mt-6 flex justify-center"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        ></div>
+       
       </div>
     </section>
   );
