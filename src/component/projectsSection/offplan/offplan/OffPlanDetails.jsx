@@ -218,11 +218,11 @@ const proximity= [
   <div className="container mx-auto px-4">
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
-    <div className="flex flex-col items-center space-y-2">
+      <div className="flex flex-col items-center space-y-2">
         <img
           src={icon5}
           alt="Starting Price Icon"
-          className="w-12 h-12 mb-2" // Icon size
+          className="w-16 h-16 mb-2" // Increased Icon size
         />
         <div>
           <p className="text-lg font-semibold">AED 1,040,000</p>
@@ -230,15 +230,15 @@ const proximity= [
         </div>
       </div>
 
-    <div className="flex flex-col items-center space-y-2">
+      <div className="flex flex-col items-center space-y-2">
         <img
           src={icon7}
           alt="Buy Property Icon"
-          className="w-12 h-12 mb-2" // Icon size
+          className="w-16 h-16 mb-2" // Increased Icon size
         />
         <div>
           <p className="text-lg font-semibold">2026</p>
-          <span className="text-sm text-[#d3d3d3]">Handover Date </span>
+          <span className="text-sm text-[#d3d3d3]">Handover Date 2026</span>
         </div>
       </div>
 
@@ -246,32 +246,30 @@ const proximity= [
         <img
           src={icon6}
           alt="Special Conditions Icon"
-          className="w-12 h-12 mb-2" // Icon size
+          className="w-16 h-16 mb-2" // Increased Icon size
         />
         <div>
-          <p className="text-lg font-semibold"> 20%</p>
-          <span className="text-sm text-[#d3d3d3]">Booking fees </span>
+          <p className="text-lg font-semibold">20%</p>
+          <span className="text-sm text-[#d3d3d3]">Booking fees 20</span>
         </div>
       </div>
 
-    
-      
-     
-     
       <div className="flex flex-col items-center space-y-2">
         <img
           src={icon8}
           alt="Another Property Icon"
-          className="w-12 h-12 mb-2" // Icon size
+          className="w-16 h-16 mb-2" // Increased Icon size
         />
         <div>
-          <p className="text-lg font-semibold"> 4</p>
-          <span className="text-sm text-[#d3d3d3]">Beds </span>
+          <p className="text-lg font-semibold">4</p>
+          <span className="text-sm text-[#d3d3d3]">Beds</span>
         </div>
       </div>
+
     </div>
   </div>
 </div>
+
 
 
 
