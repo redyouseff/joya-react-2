@@ -1,26 +1,36 @@
 import React from "react";
-import { Home, Key, Briefcase, Phone } from "lucide-react";
+import icon1 from "./icons/Commercial.svg";
+import icon2 from "./icons/Conveyancing.svg";
+import icon5 from "./icons/Property management.svg";
+import icon6 from "./icons/Property rental.svg";
+import icon7 from "./icons/Real estate buying & selling.svg";
+import icon8 from "./icons/Snagging.svg";
 
 const services = [
   {
-    icon: Home,
     title: "Real Estate Buying & Selling",
+    description: "Comprehensive support in real estate transactions.",
+    icon: icon7,
   },
   {
-    icon: Key,
     title: "Property Rental",
+    description: "Connecting tenants with quality rental properties.",
+    icon: icon6,
   },
   {
-    icon: Phone,
     title: "Off Plan Property Sales",
+    description: "Off-plan property sales offer buyers the opportunity to invest in properties.",
+    icon: icon1,
   },
   {
-    icon: Briefcase,
     title: "Commercial",
+    description: "Offering specialized services in commercial property.",
+    icon: icon1,
   },
   {
-    icon: Home,
-    title: "Property Management",
+    title: "Golden Visa",
+    description: "Assistance in acquiring UAE's Golden Visa.",
+    icon: icon8,
   },
 ];
 
@@ -34,43 +44,25 @@ const Services = () => {
 
         {/* Grid for Main Services */}
         <div className="flex flex-wrap justify-center items-center gap-12">
-          {/* First Row */}
-          {services.slice(0, 3).map((service, index) => (
+          {services.map((service, index) => (
             <div
               key={index}
               className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-72"
             >
               {/* Icon */}
               <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-8 group-hover:bg-opacity-90 transition duration-300">
-                {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 50 })}
+                <img src={service.icon} alt={service.title} className="w-12 h-12" />
               </div>
 
               {/* Title */}
               <h3 className="text-xl font-semibold text-[#faf8f7]">
                 {service.title}
               </h3>
+
+              {/* Description (اختياري) */}
+              <p className="text-sm text-[#a2a39b] mt-4">{service.description}</p>
             </div>
           ))}
-
-          {/* Second Row - Centered */}
-          <div className="flex gap-12">
-            {services.slice(3).map((service, index) => (
-              <div
-                key={index}
-                className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-72"
-              >
-                {/* Icon */}
-                <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-8 group-hover:bg-opacity-90 transition duration-300">
-                  {React.createElement(service.icon, { className: "text-[#EFECE6]", size: 50 })}
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-[#faf8f7]">
-                  {service.title}
-                </h3>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
