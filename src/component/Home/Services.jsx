@@ -18,8 +18,8 @@ const services = [
     icon: icon6,
   },
   {
-    title: "Off Plan Property Sales",
-    description: "Off-plan property sales offer buyers the opportunity to ",
+    title: "Off Plan Property",
+    description: "Off-plan property sales offer buyers the opportunity to invest in properties.",
     icon: icon1,
   },
   {
