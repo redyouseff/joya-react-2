@@ -238,7 +238,7 @@ const proximity= [
         />
         <div>
           <p className="text-lg font-semibold">2026</p>
-          <span className="text-sm text-[#d3d3d3]">Handover Date 2026</span>
+          <span className="text-sm text-[#d3d3d3]">Handover Date </span>
         </div>
       </div>
 
@@ -250,7 +250,7 @@ const proximity= [
         />
         <div>
           <p className="text-lg font-semibold"> 20%</p>
-          <span className="text-sm text-[#d3d3d3]">Booking fees 20%</span>
+          <span className="text-sm text-[#d3d3d3]">Booking fees </span>
         </div>
       </div>
 
@@ -266,7 +266,7 @@ const proximity= [
         />
         <div>
           <p className="text-lg font-semibold"> 4</p>
-          <span className="text-sm text-[#d3d3d3]">Beds 4</span>
+          <span className="text-sm text-[#d3d3d3]">Beds </span>
         </div>
       </div>
     </div>
