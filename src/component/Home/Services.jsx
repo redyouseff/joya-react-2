@@ -19,7 +19,7 @@ const services = [
   },
   {
     title: "Off Plan Property Sales",
-    description: "Off-plan property sales offer buyers the opportunity to invest in properties.",
+    description: "Off-plan property sales offer buyers the opportunity to ",
     icon: icon1,
   },
   {
@@ -47,7 +47,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-72"
+              className="p-10 bg-[#1a1f21] rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center relative group w-72 h-auto min-h-[300px]"
             >
               {/* Icon */}
               <div className="w-20 h-20 mx-auto bg-[#3d6a64] rounded-full flex items-center justify-center mb-8 group-hover:bg-opacity-90 transition duration-300">
@@ -59,7 +59,7 @@ const Services = () => {
                 {service.title}
               </h3>
 
-              {/* Description (اختياري) */}
+              {/* Description */}
               <p className="text-sm text-[#a2a39b] mt-4">{service.description}</p>
             </div>
           ))}
