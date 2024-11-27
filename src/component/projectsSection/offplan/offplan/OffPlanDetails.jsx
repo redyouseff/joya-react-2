@@ -261,8 +261,8 @@ const proximity= [
           className="w-16 h-16 mb-2" // Increased Icon size
         />
         <div>
-          <p className="text-lg font-semibold">4</p>
-          <span className="text-sm text-[#d3d3d3]">Beds</span>
+          <p className="text-lg font-semibold">2 | 3 | 4 | 5</p>
+          <span className="text-sm text-[#d3d3d3]">Bedrooms</span>
         </div>
       </div>
 
