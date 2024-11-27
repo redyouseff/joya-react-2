@@ -15,6 +15,9 @@ import Features2 from "./component/projectsSection/Featuress/Features2.jsx";
 import Luxury from "./component/projectsSection/luxury/Luxury.jsx";
 import Blog from "./component/Blogs/blog.jsx";
 import SpecificBlog from "./component/Blogs/SpesificBlog.jsx";
+import EmailInputScreen from "./pages/EmailPage.jsx";
+import LoginComponent from "./pages/LoginPage.jsx";
+
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
           <Route path="/Projects/Luxury" element={< Luxury/>} />
           <Route path="/Blog" element={< Blog/>} />
           <Route path="/SpecificBlog/:id" element={< SpecificBlog/>} />
+          <Route path="/email" element={< EmailInputScreen/>} />
+          <Route path="/login" element={< LoginComponent/>} />
+
 
         </Routes>
         <Footer />
