@@ -19,7 +19,7 @@ const HeroAbout = () => {
         <div
           className="w-full bg-no-repeat bg-cover bg-fixed min-h-[400px] md:min-h-[550px]"
           style={{
-            backgroundImage: "url('https://i.imgur.com/2hmtY4W.jpeg')",
+            backgroundImage: "url('https://res.cloudinary.com/dp5bcywc7/image/upload/v1732729770/WhatsApp_Image_2024-11-27_at_19.40.19_27016a17_bb9ryn.jpg')",
           }}
         ></div>
 
