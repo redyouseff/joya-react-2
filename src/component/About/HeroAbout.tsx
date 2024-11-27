@@ -43,7 +43,7 @@ const HeroAbout = () => {
                   We are a boutique real estate agency focused on more than just property transactions. Our mission is to empower clients to achieve financial freedom through personalized, bespoke real estate solutions. We are committed to building lasting relationships based on trust, transparency, and market expertise. Partnered with Dubai’s leading developers, we offer deep market knowledge to help clients make informed, confident decisions. Our vision is to be a globally recognized agency known for fostering enduring relationships, success, and loyalty, while empowering both clients and team members to thrive financially.
                 </p>
 
-                {/* Call to Action Button */}
+               
                 <a
                   href="https://wa.me/971585976060"
                   target="_blank"
