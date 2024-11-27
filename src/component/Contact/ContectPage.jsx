@@ -52,7 +52,7 @@
                   transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
                   <p className="text-xl uppercase text-[#9da5a4] mb-6">
-                    What Can We Do For You?
+                  Reach out to our team
                   </p>
                   <div className="tabs mb-8">
                     <ul className="flex space-y-6 md:space-y-0 md:space-x-2 md:flex-row flex-col">
@@ -79,22 +79,25 @@
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <input
                       type="text"
-                      placeholder="Your Name"
+                      placeholder=" Name  *"
+                      className="p-4 bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md"
+                      required
+                    />
+                    <input
+                      type="email" 
+                      placeholder=" Email  *"
+                     required
                       className="p-4 bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md"
                     />
                     <input
-                      type="email"
-                      placeholder="Your Email"
+                      type="text "
+                      placeholder=" Phone number *"
                       className="p-4 bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md"
+                    required
                     />
                     <input
                       type="text"
-                      placeholder="Your Phone number"
-                      className="p-4 bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Your Location (Country of residence)"
+                      placeholder=" Location (Country of residence)"
                       className="p-4 bg-[#111612] border border-[#698f8c] placeholder-[#9da5a4] focus:outline-none rounded-md"
                     />
                   </div>
@@ -139,7 +142,7 @@
                       to detail and discretion for discerning clients.
                     </p>
                     <p className="mb-6">
-                      We meticulously choose brokers with exceptional success in the
+                    choose brokers with exceptional success in the
                       Joya market. Currently, we are not accepting applications to
                       join the agency.
                     </p>
