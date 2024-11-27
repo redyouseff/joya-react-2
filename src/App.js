@@ -17,6 +17,7 @@ import Blog from "./component/Blogs/blog.jsx";
 import SpecificBlog from "./component/Blogs/SpesificBlog.jsx";
 import EmailInputScreen from "./pages/EmailPage.jsx";
 import LoginComponent from "./pages/LoginPage.jsx";
+import Properties from "./pages/Dashboard.jsx";
 
 
 function App() {
@@ -39,8 +40,7 @@ function App() {
           <Route path="/SpecificBlog/:id" element={< SpecificBlog/>} />
           <Route path="/email" element={< EmailInputScreen/>} />
           <Route path="/login" element={< LoginComponent/>} />
-
-
+          <Route path="/Properties" element={< Properties/>} />
         </Routes>
         <Footer />
     </BrowserRouter>
