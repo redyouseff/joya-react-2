@@ -11,7 +11,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const teamMembers = [
 
   {
-    name: "Mohammed Nabbel",
+    name: "Mohamed Nabil",
     role: "Co-founder and Managing Director",
     img: image2,
     languages: "English, Arabic",
