@@ -30,7 +30,7 @@ const HeroAbout = () => {
               <div className="bg-[#354948] px-2 py-2 lg:px-10 lg:py-10 shadow-md flex flex-col justify-start items-start rounded-md transition-all duration-300 ease-in-out transform hover:md:scale-105 hover:shadow-lg">
                 {/* Subheading */}
                 <h2 className="text-base md:text-lg lg:text-xl font-semibold mb-2 text-[#f0ede6]">
-                  JOYA IN DUBAI
+               
                 </h2>
 
                 {/* Main Heading */}

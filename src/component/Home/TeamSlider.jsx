@@ -6,11 +6,12 @@ import { Pagination, Autoplay } from "swiper/modules";
 import image1 from "../../images/sliders/image 1.png";
 import image2 from "../../images/sliders/image 2.png";
 import image3 from "../../images/sliders/new/slina.jpg";
+import { FaWhatsapp } from "react-icons/fa";
 
 const teamMembers = [
 
   {
-    name: "Nabeel Hammudeh",
+    name: "Mohammed Nabbel",
     role: "Co-founder and Managing Director",
     img: image2,
     languages: "English, Arabic",
@@ -38,8 +39,7 @@ const TeamSlider = () => {
         <div className="mb-12">
           <h2 className="text-2xl md:text-4xl font-bold text-[#f1f0ec]">The Team</h2>
           <h3 className="text-[14px] md:text-xl text-[#f0ede6] mt-2">
-            With unrivaled expertise in the JOYA market, our advisors will guide
-            you on your journey.
+          With unrivalled experience in UAE market
           </h3>
         </div>
 
@@ -85,8 +85,8 @@ const TeamSlider = () => {
                   {/* Contact Icons */}
                   <div className="flex justify-center space-x-4 mt-4 text-[#bfbfbf]">
                     <Mail size={18} className="hover:text-white transition duration-300" />
-                    <Phone size={18} className="hover:text-white transition duration-300" />
-                    <Globe size={18} className="hover:text-white transition duration-300" />
+                    <FaWhatsapp size={18} className="hover:text-white transition duration-300" />
+                   
                   </div>
                 </div>
               </div>

@@ -19,7 +19,7 @@ const services = [
   },
   {
     title: "Off Plan Property",
-    description: "Off-plan property sales offer buyers the opportunity to invest in properties.",
+    description: "Connecting you to top developers for exclusive off-plan deals",
     icon: icon1,
   },
   {

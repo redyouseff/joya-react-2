@@ -156,17 +156,19 @@
                     </a>
 
                       {/* Map Section */}
-  <div className="mt-6">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.3935221257595!2d55.27218731499999!3d25.20484968387482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEyJzE3LjgiTiA1NcKwMTYnMjIuNiJF!5e0!3m2!1sen!2sae!4v1604414715792!5m2!1sen!2sae"
-     width="100%" 
-      height="350" 
-      style={{ border: 0, marginTop: "10px" }}
-      allowFullScreen=""
-      loading="lazy"
-      className="rounded-lg"
-    ></iframe>
-  </div>
+ {/* Map Section */}
+<div className="mt-6">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.998915856884!2d55.2612381!3d25.1884074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682d1ff90fe7%3A0x14375ae978cdf590!2sPrime%20Tower%20-%20Business%20Bay%20-%20Dubai!5e0!3m2!1sen!2sae!4v1604414715792!5m2!1sen!2sae"
+    width="100%"
+    height="350"
+    style={{ border: 0, marginTop: "10px" }}
+    allowFullScreen=""
+    loading="lazy"
+    className="rounded-lg"
+  ></iframe>
+</div>
+
                   </div>
                 </motion.div>
               </div>
